@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event Feedback Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid gray;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+
+        #fee, #count {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+
+        // Validate Phone Number
+        function validatePhone() {
+
+            let phone = document.getElementById("phone").value;
+
+            if (phone.length != 10) {
+                alert("Phone number must contain 10 digits");
+            }
+        }
+
+        // Display Event Fee
+        function showFee() {
+
+            let eventType = document.getElementById("event").value;
+            let feeText = "";
+
+            if (eventType == "Music") {
+                feeText = "Event Fee: ₹500";
+            }
+
+            else if (eventType == "Sports") {
+                feeText = "Event Fee: ₹300";
+            }
+
+            else if (eventType == "Food") {
+                feeText = "Event Fee: ₹200";
+            }
+
+            document.getElementById("fee").innerHTML = feeText;
+        }
+
+        // Submit Confirmation
+        function showMessage() {
+            alert("Feedback Submitted Successfully");
+        }
+
+        // Character Count
+        function countCharacters() {
+
+            let text = document.getElementById("feedback").value;
+
+            document.getElementById("count").innerHTML =
+                "Characters: " + text.length;
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2 align="center">Event Feedback Form</h2>
+
+    <form>
+
+        <!-- Phone Number -->
+        <label>Phone Number:</label>
+
+        <input type="text"
+               id="phone"
+               placeholder="Enter phone number"
+               onblur="validatePhone()">
+
+        <!-- Event Selection -->
+        <label>Select Event:</label>
+
+        <select id="event" onchange="showFee()">
+
+            <option value="">Select Event</option>
+            <option>Music</option>
+            <option>Sports</option>
+            <option>Food</option>
+
+        </select>
+
+        <!-- Fee Display -->
+        <p id="fee"></p>
+
+        <!-- Feedback -->
+        <label>Feedback:</label>
+
+        <textarea id="feedback"
+                  rows="5"
+                  placeholder="Enter your feedback"
+                  onkeyup="countCharacters()"></textarea>
+
+        <!-- Character Count -->
+        <p id="count">Characters: 0</p>
+
+        <!-- Submit Button -->
+        <button type="button"
+                onclick="showMessage()">
+            Submit
+        </button>
+
+    </form>
+
+</body>
+
+</html>

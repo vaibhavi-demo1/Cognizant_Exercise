@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Video Invite</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        video {
+            border: 2px solid black;
+            margin-top: 20px;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+
+        // Video Ready Message
+        function videoReady() {
+
+            document.getElementById("message").innerHTML =
+                "Video ready to play";
+        }
+
+        // Warning Before Leaving Page
+        window.onbeforeunload = function () {
+
+            return "Your form is not submitted. Are you sure you want to leave?";
+        };
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Community Event Promo Video</h2>
+
+    <!-- Video -->
+    <video width="400"
+           controls
+           oncanplay="videoReady()">
+
+<source src="https://cdn.pixabay.com/video/2025/03/19/266034_large.mp4"
+        type="video/mp4">
+        Your browser does not support video.
+    </video>
+
+    <!-- Message -->
+    <p id="message"></p>
+
+</body>
+
+</html>

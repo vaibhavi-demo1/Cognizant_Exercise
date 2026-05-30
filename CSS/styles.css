@@ -1,0 +1,153 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body Styles */
+body{
+    font-family:'Poppins',sans-serif;
+    background-color:#f0f0f0;
+    background-image:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+    background-size:cover;
+    padding:20px;
+}
+
+/* Header Styles */
+#mainHeader{
+    background:linear-gradient(to right,#007BFF,#5DADE2);
+    padding:15px;
+    margin-bottom:20px;
+}
+
+/* Navigation */
+nav ul{
+    list-style:none;
+}
+
+nav li{
+    display:inline-block;
+    margin-right:20px;
+}
+
+/* Link Styles */
+a:link{
+    color:white;
+    text-decoration:none;
+}
+
+a:hover{
+    color:yellow;
+}
+
+a:active{
+    color:red;
+}
+
+a:visited{
+    color:white;
+}
+
+/* Element Selector */
+h2{
+    color:#003366;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+/* Grouping Selector */
+h3,p{
+    color:#333;
+}
+
+/* Event Card */
+.eventCard{
+    background:rgba(255,255,255,0.8);
+    border:2px solid #007BFF;
+    padding:15px;
+    margin:15px 0;
+}
+
+/* CTA Button */
+.cta-button{
+    background-color:#007BFF;
+    color:white;
+    padding:10px 20px;
+    border:none;
+}
+
+/* Table Styles */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+th,td{
+    border:1px solid black;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background-color:#007BFF;
+    color:white;
+}
+
+tr:nth-child(even){
+    background-color:#eeeeee;
+}
+
+/* Form */
+input{
+    display:block;
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+input:focus{
+    outline:3px solid orange;
+}
+
+/* Multi Column Layout */
+.news{
+    column-count:2;
+    column-gap:30px;
+    column-rule:1px solid gray;
+    margin-top:15px;
+}
+
+/* Visibility Example */
+.hiddenText{
+    visibility:hidden;
+}
+
+.noneText{
+    display:none;
+}
+
+/* Responsive Design */
+@media screen and (max-width:768px){
+
+    nav li{
+        display:block;
+        margin:10px 0;
+    }
+
+    body{
+        font-size:14px;
+    }
+
+    table{
+        font-size:12px;
+    }
+
+    .eventCard{
+        width:100%;
+    }
+}
